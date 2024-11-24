@@ -1,0 +1,12 @@
+1. download git latestversion, add the path to env variables.
+2. check if git --version is giving output.
+3. setup git in pycharm- file>settings>versioncontrol> Git.
+check the git executable path is set - click on Test.
+4. add and commit the files. view>tool windows > version control(alt+9)
+5. go to local changes tab or go to Commit tab- commit changes with msg.
+6.Create a remote repo in github. get the url. no readme file.
+7. link your local repo to github.
+Git> manage Remotes. +  > paste the url. (name it origin)
+8. go to Git- push changes. if authentication required give username/password.
+9. To switch branches go to Git> Branches.
+10 Use Git log window to view commit history. 
