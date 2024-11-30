@@ -20,13 +20,23 @@ driver.find_element(By.NAME, "email").send_keys("hello@gmail.com")
 driver.find_element(By.ID, "exampleInputPassword1").send_keys("hello")
 driver.find_element(By.ID, "exampleCheck1").click()
 
+#CSS - tagname[attribute='value'] -> input[type='submit'], #id, .classname
+driver.find_element(By.CSS_SELECTOR, "input[name='name']").send_keys("TobiasEthan")
+#driver.find_element(By.CSS_SELECTOR, "input[id='inlineRadio2']").click()
+driver.find_element(By.CSS_SELECTOR, "#inlineRadio2").click()
+
+
+
 #Tagname
 # Xpath - //tagname[@attribute='value'] -> //input[@type='submit']
+driver.find_element(By.XPATH, "(//input[@type='text'])[3]").send_keys("Ohayio")#how to select element when there are more than 1 types.
+driver.find_element(By.XPATH, "(//input[@type='text'])[3]").clear()
 driver.find_element(By.XPATH, "//input[@type='submit']").click()
 message = driver.find_element(By.CLASS_NAME, "alert-success").text
 print(message)
 
-#CSS - tagname[attribute='value'] -> input[type='submit']
-driver.find_element(By.CSS_SELECTOR, "input[name='name']").send_keys("TobiasEthan")
+
 assert "Success" in message
-time.sleep(5)
+
+
+time.sleep(7)
