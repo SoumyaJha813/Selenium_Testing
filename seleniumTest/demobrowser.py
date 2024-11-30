@@ -3,6 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 
 #Chrome driver service Selenium  160->160 chrome driver
 #service_obj = Service(r"C:\Users\sojha\Downloads\chromedriver-win64\chromedriver.exe")
@@ -31,6 +32,14 @@ driver.find_element(By.CSS_SELECTOR, "#inlineRadio2").click()
 # Xpath - //tagname[@attribute='value'] -> //input[@type='submit']
 driver.find_element(By.XPATH, "(//input[@type='text'])[3]").send_keys("Ohayio")#how to select element when there are more than 1 types.
 driver.find_element(By.XPATH, "(//input[@type='text'])[3]").clear()
+
+#Static DropDown
+#driver.find_element(By.CSS_SELECTOR, "select[id='exampleFormControlSelect1']")
+dropdown = Select(driver.find_element(By.ID, 'exampleFormControlSelect1'))
+dropdown.select_by_visible_text('Female')
+dropdown.select_by_index(1)
+#dropdown.select_by_value()
+
 driver.find_element(By.XPATH, "//input[@type='submit']").click()
 message = driver.find_element(By.CLASS_NAME, "alert-success").text
 print(message)
@@ -39,4 +48,4 @@ print(message)
 assert "Success" in message
 
 
-time.sleep(7)
+time.sleep(9)
