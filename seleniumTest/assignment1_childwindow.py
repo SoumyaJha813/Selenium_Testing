@@ -1,11 +1,7 @@
 import time
-from itertools import dropwhile
-
 from selenium import webdriver
-from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
 driver = webdriver.Chrome()
@@ -20,11 +16,9 @@ windows_opened = driver.window_handles
 driver.switch_to.window(windows_opened[1])
 
 email = driver.find_element(By.XPATH, "//div/p[@class='im-para red']").text
-print(email)
-
 email_add = email.split(' ')[4]
-print(email_add)
 driver.close()
+
 driver.switch_to.window(windows_opened[0])
 driver.find_element(By.ID, "username").send_keys(email_add)
 driver.find_element(By.ID, "password").send_keys("learning")
