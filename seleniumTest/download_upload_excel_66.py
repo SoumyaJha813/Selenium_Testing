@@ -22,11 +22,11 @@ driver.get("https://rahulshettyacademy.com/upload-download-test/index.html")
 #fetch the text apple price from webpage
 fruit_name = "Apple"
 filepath = "C:\\Users\\sojha\\Downloads\\download.xlsx"
-time.sleep(3)
 #colName - price
 new_value = "990"
 #file downloaded
 driver.find_element(By.ID, "downloadButton").click()
+time.sleep(5)
 
 
 def update_excel_data(filepath, searchTerm, colName, new_value):
