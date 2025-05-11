@@ -1,0 +1,14 @@
+install Pytest - pip install pytest
+naming conventions to follow for Pytest Tests
+Running selected test files using pytest
+Running selected test methods based on matching keywords
+Pytest Tags mechanism to run tests based on functionality
+Failing and skipping tests with Annotations using Pytest
+What are fixtures and importance of their hooks in pytest
+How fixtures can be configured in Conftest file for better readability
+Different scopes of fixtures and their related annotations to set up Pre- and Post-conditions of the Test
+How Parameterization can be achieved for Tests with multiple sets of data
+how to pass command line arguments into Pytest
+Html report generation for Pytest Execution
+incase you want to run all the testcases in folder from terminal, go to path directory then dun py.test from that path.
+it will run all testcases in that folder.
