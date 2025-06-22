@@ -1,7 +1,7 @@
 #Any pytest file should start with test_ or end with _test
 #pytest method names should start with test
 #method name should make sense
-# - k <testcase> stands for method name execution, -s logs the input/output, -v stands for more info
+# - k <testcase> stands for method name execution, -s logs the output, -v stands for more info
 #you can run specific file py.test <filename>
 # Smoke testcase or regression testcases - how to run only those - tag those testcases #py.test  -s -v -m smoke
 #you can mark tests with @pytest.mark.smoke - and run with -m smoke option
@@ -28,7 +28,7 @@ def test_secondprogramgreeting():
 @pytest.mark.xfail
 def test_thirdprogrammultiply():
     a = 4
-    b = 8
+    b = 3
     assert (a*2) == b, "Not matching"
 
 def test_fixturesDemo(setup):
