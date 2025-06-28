@@ -2,6 +2,8 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
+from selenium.webdriver.chrome.options import Options
+
 def pytest_addoption(parser):
     parser.addoption(
         "--browser_name", action="store", default="chrome", help="run different browsers"
@@ -13,7 +15,13 @@ def pytest_addoption(parser):
 def browserInstance(request):
     browser_name = request.config.getoption("--browser_name")
     if browser_name == "chrome":
-        driver= webdriver.Chrome()
+        chrome_options = Options()
+        prefs = {
+            "credentials_enable_service": False,
+            "profile.password_manager_enabled": False
+        }
+        chrome_options.add_experimental_option("prefs", prefs)
+        driver= webdriver.Chrome(options=chrome_options)
         driver.implicitly_wait(5)
     elif browser_name == "firefox":
         driver= webdriver.Firefox()
