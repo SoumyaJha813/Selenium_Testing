@@ -2,10 +2,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+from utils.browserutils import BrowserUtils
 
 
-class CheckoutPage:
+class CheckoutPage(BrowserUtils):
     def __init__(self, driver):
+        super().__init__(driver) #initializing the parent driver
         self.driver = driver
         self.checkout_page = (By.XPATH, "//button[@class='btn btn-success']")
         self.search_country = (By.ID, "country")
@@ -33,3 +35,6 @@ class CheckoutPage:
         print(output_msg)
         web_msg = "Success! Thank you! Your order will be delivered in next few weeks :-)."
         assert "Success! Thank you!" in output_msg
+
+    def getTitle(self):
+        return self.driver.title

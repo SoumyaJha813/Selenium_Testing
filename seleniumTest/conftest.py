@@ -21,10 +21,11 @@ def browserInstance(request):
             "profile.password_manager_enabled": False
         }
         chrome_options.add_experimental_option("prefs", prefs)
+        chrome_options.add_argument("--incognito")
         driver= webdriver.Chrome(options=chrome_options)
-        driver.implicitly_wait(5)
     elif browser_name == "firefox":
         driver= webdriver.Firefox()
-        driver.implicitly_wait(5)
+    driver.implicitly_wait(5)
+
     yield driver #before test execution
     driver.close() #after test execution

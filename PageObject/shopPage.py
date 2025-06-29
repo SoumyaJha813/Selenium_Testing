@@ -1,10 +1,12 @@
 from selenium.webdriver.common.by import By
 
 from PageObject.checkout_page import CheckoutPage
+from utils.browserutils import BrowserUtils
 
 
-class ShopPage:
+class ShopPage(BrowserUtils):
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
         self.shop_link = (By.LINK_TEXT, "Shop")
         self.list_of_phones = (By.XPATH, "//div[@class='card h-100']")
@@ -28,3 +30,6 @@ class ShopPage:
         self.driver.find_element(*self.cart_link).click()
         checkout_cntry = CheckoutPage(self.driver)
         return checkout_cntry
+
+    def getTitle(self):
+        return self.driver.title
