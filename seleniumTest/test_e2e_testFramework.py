@@ -1,6 +1,9 @@
 #the operation we perform in each page we will create a page object module with class assigned to each.
 # $x("//button[@class='btn']") - console javascript
 #pip install pytest-xdist - pytest -n 2 # plugin you need to run tests in parallel
+
+#pytest -n 2 -m smoke --browser_name firefox --html=reports/report.html
+
 import json
 import time
 from operator import contains
