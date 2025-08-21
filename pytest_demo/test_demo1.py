@@ -16,7 +16,7 @@
 import pytest
 
 
-@pytest.mark.smoke
+@pytest.mark.smoker
 def test_firstprogramprint(setup):
     print("Hello")
 

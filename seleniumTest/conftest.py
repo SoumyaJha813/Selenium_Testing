@@ -32,6 +32,8 @@ def browserInstance(request):
         driver= webdriver.Chrome(options=chrome_options)
     elif browser_name == "firefox":
         driver= webdriver.Firefox()
+    elif browser_name == "safari":
+        driver= webdriver.Safari()
     driver.implicitly_wait(5)
 
     yield driver #before test execution
