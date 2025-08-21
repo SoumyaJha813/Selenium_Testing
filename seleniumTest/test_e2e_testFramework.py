@@ -15,7 +15,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import os
 import sys
-
+#edit
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from PageObject.checkout_page import CheckoutPage
 from PageObject.login_page import LoginPage
